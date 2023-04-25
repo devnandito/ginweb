@@ -14,7 +14,8 @@ func main() {
 		"upper": strings.ToUpper,
 	})
 	router.Static("/assets", "./assets")
-	router.LoadHTMLGlob("templates/*.tmpl")
+	// router.LoadHTMLGlob("templates/*.tmpl")
+	router.LoadHTMLFiles("./templates/modules/show.tmpl")
 	router.GET("/modules/show", handlers.HandlerShowModule)
 	router.Run(":8080")
 }
